@@ -2,25 +2,22 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            @php
-                @$setting = App\Models\Setting::first();
-            @endphp
             <div class="navbar-brand-box">
                 <a href="{{ route('home') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('storage/setting/'.@$setting->logo) }}" alt="" height="22">
+                        <img src="{{ asset('storage/setting/') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('storage/setting/'.@$setting->logo) }}" alt="" height="17">
+                        <img src="{{ asset('storage/setting/') }}" alt="" height="17">
                     </span>
                 </a>
 
                 <a href="{{ route('home') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('storage/setting/'.@$setting->logo) }}" alt="" height="22">
+                        <img src="{{ asset('storage/setting/') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('storage/setting/'.@$setting->logo) }}" alt="" height="19">
+                        <img src="{{ asset('storage/setting/') }}" alt="" height="19">
                     </span>
                 </a>
             </div>

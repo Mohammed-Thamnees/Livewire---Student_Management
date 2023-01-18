@@ -101,14 +101,10 @@
                             </div>
                         </div>
                         <div class="mt-5 text-center">
-
-                            @php
-                                @$setting = App\Models\Setting::first();
-                            @endphp
                             <div>
                                {{--  <p>Don't have an account ? <a href="{{ route('register') }}" class="fw-medium text-primary"> Signup now </a> </p> --}}
                                 <p>
-                                    {!! @$setting->copyright !!}
+                                    copyright @ 2023
                                 </p>
                             </div>
                         </div>
