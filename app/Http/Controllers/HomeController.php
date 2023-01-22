@@ -40,9 +40,15 @@ class HomeController extends Controller
     public function loginsubmit(Request $request)
     {
         $user= $request->all();
-        $login=Auth::attempt(['email' => $user['email'],'password' => $user['password'], 'role' => 'admin', 'status' => 1]);
-        if($login){
 
+        $login = Auth::attempt([
+            'email' => $user['email'],
+            'password' => $user['password'],
+            'role' => 'admin',
+            'status' => 1
+        ]);
+
+        if($login){
             Toastr::success('Welcome!!', 'success');
             return redirect()->route('home');
         }
