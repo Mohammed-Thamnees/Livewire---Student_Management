@@ -33,4 +33,6 @@
 
 @stack('script')
 
+@livewireScripts
+
 {!! Toastr::message() !!}

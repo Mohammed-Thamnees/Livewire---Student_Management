@@ -27,5 +27,7 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 
     @stack('style')
+
+    @livewireStyles
     
 </head>
