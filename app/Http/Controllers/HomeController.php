@@ -49,11 +49,11 @@ class HomeController extends Controller
         ]);
 
         if($login){
-            Toastr::success('Welcome!!', 'success');
+            //Toastr::success('Welcome!!', 'success');
             return redirect()->route('home');
         }
         else{
-            Toastr::error('try again!', 'error');
+            //Toastr::error('try again!', 'error');
             return redirect()->back();
         }
     }
@@ -61,7 +61,7 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        Toastr::success('logout success', 'success');
+        //Toastr::success('logout success', 'success');
         return redirect()->route('login.form');
     }
 

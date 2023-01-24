@@ -127,6 +127,6 @@
 
         <script src="{{ asset('assets/libs/toastr/build/toastr.min.js') }}"></script>
         <script src="{{ asset('assets/js/pages/toastr.init.js') }}"></script>
-        {!! Toastr::message() !!}
+        {{-- {!! Toastr::message() !!} --}}
     </body>
 </html>

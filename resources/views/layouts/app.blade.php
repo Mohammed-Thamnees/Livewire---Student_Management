@@ -1,24 +1,45 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
+@extends('layouts.base')
 
-        <meta name="application-name" content="{{ config('app.name') }}">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('body')
+	<div id="layout-wrapper" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
 
-        <title>{{ config('app.name') }}</title>
+		@include('layouts.app.header')
 
-        <style>[x-cloak] { display: none !important; }</style>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @livewireStyles
-        @livewireScripts
-        @stack('scripts')
-    </head>
+		@include('layouts.app.nav')
 
-    <body class="antialiased">
-        {{ $slot }}
+		<div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
 
-        @livewire('notifications')
-    </body>
-</html>
+                	@yield('content')
+                        
+                </div>
+            </div>
+            <!-- End Page-content -->
+
+            @include('layouts.app.footer')
+        </div>
+
+		@isset($slot)
+			{{ $slot }}
+		@endisset
+	</div>
+
+	<script>
+		const setup = () => {
+			// Create a media condition that targets viewports at least 768px wide
+			const sm = window.matchMedia('(min-width: 768px)')
+			// Check if the media query is true
+
+			return {
+				loading: true,
+				isSidebarOpen: sm.matches ? true : false,
+				toggleSidbarMenu() {
+					this.isSidebarOpen = !this.isSidebarOpen
+				},
+				isSettingsPanelOpen: false,
+				isSearchBoxOpen: false,
+			}
+		}
+	</script>
+@endsection
