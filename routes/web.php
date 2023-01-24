@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Livewire\Tables\ClassesTable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,7 @@ Route::get('/userlogout', [App\Http\Controllers\HomeController::class, 'logout']
 //Admin Routes
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('class/index', ClassesTable::class)->name('class.index');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('class/index', [HomeController::class, 'class_index'])->name('class.index');
     
 });

@@ -12,6 +12,10 @@
                 <div class="container-fluid">
 
                 	@yield('content')
+
+					@isset($slot)
+						{{ $slot }}
+					@endisset
                         
                 </div>
             </div>
@@ -20,9 +24,6 @@
             @include('layouts.app.footer')
         </div>
 
-		@isset($slot)
-			{{ $slot }}
-		@endisset
 	</div>
 
 	<script>
